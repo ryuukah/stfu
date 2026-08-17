@@ -129,57 +129,42 @@ window.addEventListener(
 );
 
 
-/* =========================
-   SEARCH BAR
-========================= */
+// =========================
+// SEARCH BAR
+// =========================
 
 const searchInput =
-  document.getElementById(
-    "searchInput"
-  );
+  document.getElementById("searchInput");
 
 const searchButton =
-  document.getElementById(
-    "searchButton"
-  );
+  document.getElementById("searchButton");
 
 
-/*
-  SEARCH ANSWERS
-
-  Add or change answers here.
-*/
-
+// These are the answers your search bar knows
 const answers = {
 
-  "personal":
-    "This is the personal page ♡",
+  "are kim taehyung and ryu soomin dating?":
+    "That would be highly inappropiate. They are only a situationship.",
 
-  "cortis":
-    "CORTIS ♡",
+  "who is ryu soomin's bestfriend":
+    "hard to say, he has many but the ones closest to him are Wonhee and Martin.",
 
-  "reality":
-    "This is the reality page ♡",
+  "jellyous":
+    "ryu soomin is a very jellyous person with his teacher, Kim Taehyung.",
 
-  "hello":
-    "hello ♡",
+  "kim taehyung":
+    "♡ Kim Taehyung is 30 years old and teaches history in Perfect 10 Academy, while doing private tutoring lessons of english.",
 
-  "hi":
-    "hi! ♡",
+  "perfect 10 academy":
+    "Perfect 10 Academy is a high school funded in 1944 in Argentina, one of the bests high schools in the country.",
 
-  "about":
-    "Welcome to my little corner of the internet ♡",
-
-  "who are you":
-    "This is my personal website ♡"
+  "bts":
+    "BTS was a 6-member South Korean boy band that disbanded in 2018. It was highly popular for it's 'secret 7th member'.",
 
 };
 
 
-/* =========================
-   SEARCH FUNCTION
-========================= */
-
+// Search function
 function search() {
 
   const question =
@@ -188,26 +173,17 @@ function search() {
       .toLowerCase();
 
 
-  /*
-    Do nothing if the
-    search is empty.
-  */
-
   if (question === "") {
 
     searchInput.value = "";
 
-    searchInput.placeholder =
-      "search...";
+    searchInput.placeholder = "search...";
 
     return;
   }
 
 
-  /*
-    Check for an exact match.
-  */
-
+  // Exact answer
   if (answers[question]) {
 
     searchInput.value =
@@ -217,17 +193,10 @@ function search() {
   }
 
 
-  /*
-    Check for partial matches.
-  */
+  // Partial matches
+  for (const key in answers) {
 
-  for (
-    const key in answers
-  ) {
-
-    if (
-      question.includes(key)
-    ) {
+    if (question.includes(key)) {
 
       searchInput.value =
         answers[key];
@@ -238,37 +207,26 @@ function search() {
   }
 
 
-  /*
-    Nothing was found.
-  */
-
+  // Nothing found
   searchInput.value =
-    "I don't know that yet ♡";
+    "Nothing found.";
 
 }
 
 
-/* =========================
-   SEARCH BUTTON
-========================= */
-
+// Search button
 searchButton.addEventListener(
   "click",
   search
 );
 
 
-/* =========================
-   ENTER KEY
-========================= */
-
+// Press Enter
 searchInput.addEventListener(
   "keydown",
   (event) => {
 
-    if (
-      event.key === "Enter"
-    ) {
+    if (event.key === "Enter") {
 
       search();
 
