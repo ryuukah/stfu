@@ -161,6 +161,15 @@ const answers = {
   "bts":
     "BTS was a 6-member South Korean boy band that disbanded in 2018. It was highly popular for it's 'secret 7th member'.",
 
+   "crotis sexuality":
+    "All of CROTIS, except Soomin, are bisexual.",
+
+   "wonhee sexuality":
+    "Wonhee is bisexual.",
+
+   "yunah sexuality":
+    "Yunah is a lesbian.",
+
 };
 
 
